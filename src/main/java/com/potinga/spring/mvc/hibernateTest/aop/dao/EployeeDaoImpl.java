@@ -8,16 +8,18 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.util.List;
+
 @Repository
 public class EployeeDaoImpl implements EmployeeDAO {
     @Autowired
     private SessionFactory sessionFactory;
+
     @Override
-    @Transactional
-    public List<Employee> getAllEmployee() {
+
+    public List<Employee> getAllEmployees() {
         Session session = sessionFactory.getCurrentSession();
-     List<Employee>allEmployees = session.createQuery("from Employee",
-             Employee.class).getResultList();
-        return allEmployees ;
+        List<Employee> allEmployees = session.createQuery("from Employee",
+                Employee.class).getResultList();
+        return allEmployees;
     }
 }
