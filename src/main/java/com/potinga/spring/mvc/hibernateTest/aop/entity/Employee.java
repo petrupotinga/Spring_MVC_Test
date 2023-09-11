@@ -3,7 +3,7 @@ package com.potinga.spring.mvc.hibernateTest.aop.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name ="employees")
+@Table(name = "employees")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
